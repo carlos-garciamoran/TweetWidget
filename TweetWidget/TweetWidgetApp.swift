@@ -11,7 +11,25 @@ import SwiftUI
 struct TweetWidgetApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                // TODO: track widget clicks (measure engagement!)
+                .onOpenURL {url in
+                    guard url.scheme == "tweetwidget" else { return }
+                    openTweet(url: url)
+                    print(url)
+                }
         }
     }
+}
+
+func openTweet(url: URL) {
+    let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
+    let path = "\(components?.host! ?? "")\(components?.path ?? "")"
+
+    guard let url = URL(string: "https://twitter.com/\(path)") else {
+        print("Invalid URL")
+        return
+    }
+
+    UIApplication.shared.open(url, options: [:], completionHandler: nil)
 }
