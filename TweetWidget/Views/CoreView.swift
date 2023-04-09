@@ -104,8 +104,8 @@ struct CoreView: View {
                             
                             if userResp.id != nil  {  // Success.
                                 tweetResp = await model.getRandomTweetFromUser(username: submittedUsername, id: userResp.id!)
-                                
-                                if tweetResp.error == nil {
+
+                                if tweetResp.error == nil && tweetResp.tweet != nil {
                                     // NOTE: could refactor to get encoded user.
                                     let user = User(id: userResp.id!, username: submittedUsername)
                                     let userData = try! JSONEncoder().encode(user)

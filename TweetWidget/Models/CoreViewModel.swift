@@ -42,7 +42,6 @@ class CoreViewModel: ObservableObject {
         // Get user id from DB.
         guard let cachedUser: UserResponse = try? await query.execute().value else {
             // No user found, hit Edge function to fetch user id.
-            //guard let user: UserResponse = try? await edgeClient.invoke(
             guard let user: UserResponse = try? await supabaseClient.functions.invoke(
                 functionName: "fetch-user-id",
                 invokeOptions: .init(body: ["username": username])

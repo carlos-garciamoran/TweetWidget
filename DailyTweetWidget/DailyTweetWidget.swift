@@ -76,8 +76,9 @@ struct Provider: IntentTimelineProvider {
         let user = getUserFromStorage()
 
         Task {
-            // NOTE: may want to create error tweet to pass down error.
+            // NOTE: may want to create error tweet to inform user (through widget).
             let tweet: Tweet = await model.getRandomTweetFromUser(username: user.username!, id: user.id!).tweet ?? Tweet.sampleData
+//            let tweet = Tweet.sampleData
 
             let entry = TweetEntry(date: nextUpdateDate, configuration: configuration, tweet: tweet)
 
