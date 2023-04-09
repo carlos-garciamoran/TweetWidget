@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Functions
-import PostgREST
 import Supabase
 
 struct UserResponse: Decodable {
@@ -16,7 +14,7 @@ struct UserResponse: Decodable {
     var error: String?
 }
 struct TweetResponse: Decodable {
-    let tweet: Tweet?
+    var tweet: Tweet?
     var error: String?
 }
 
@@ -32,19 +30,10 @@ class TextBindingManager: ObservableObject {
 }
 
 class CoreViewModel: ObservableObject {
-    let dbClient: PostgrestClient
-    let edgeClient: FunctionsClient
-
-    init() {
-        dbClient = SupabaseClient(supabaseURL: Constants.SupabaseURL, supabaseKey: Constants.SupabaseKey).database
-        edgeClient = FunctionsClient(
-            url: Constants.SupabaseFunctionsURL,
-            headers: [ "Authorization": "Bearer \(Constants.SupabaseKey)" ]
-        )
-    }
+    let supabaseClient = SupabaseClient(supabaseURL: Constants.SupabaseURL, supabaseKey: Constants.SupabaseKey)
 
     func getUserId(username: String) async -> UserResponse {
-        let query = dbClient
+        let query = supabaseClient.database
             .from("tracked_users")
             .select(columns: "id")
             .eq(column: "username", value: username)
@@ -53,9 +42,10 @@ class CoreViewModel: ObservableObject {
         // Get user id from DB.
         guard let cachedUser: UserResponse = try? await query.execute().value else {
             // No user found, hit Edge function to fetch user id.
-            guard let user: UserResponse = try? await edgeClient.invoke(
+            //guard let user: UserResponse = try? await edgeClient.invoke(
+            guard let user: UserResponse = try? await supabaseClient.functions.invoke(
                 functionName: "fetch-user-id",
-                invokeOptions: FunctionInvokeOptions(body: ["username": username])
+                invokeOptions: .init(body: ["username": username])
             ) else {
                 return UserResponse(id: nil, error: "Error fetching data. Check your connection!")
             }
@@ -67,24 +57,27 @@ class CoreViewModel: ObservableObject {
     }
 
     func getRandomTweetFromUser(username: String, id: String) async -> TweetResponse {
-//        let query = dbClient
-//            .from("daily_tweets")
-//            .select(columns: "*")
-//            .eq(column: "username", value: username)
-//            .single()
-
-        // Get daily tweet from DB.
-        // guard let cachedTweet: TweetResponse = try? await query.execute().value else {
-        // No tweet found, hit Edge function to fetch tweet.
-        guard let tweet: TweetResponse = try? await edgeClient.invoke(
+        // Fetch tweet through Edge Function.
+        guard var tweetResp: TweetResponse = try? await supabaseClient.functions.invoke(
             functionName: "fetch-random-tweet-from-user",
-            invokeOptions: FunctionInvokeOptions(body: ["id": id, "username": username])
+            invokeOptions: .init(
+                headers: [
+                    "Authorization": "Bearer \(Constants.SupabaseKey)"
+                ],
+                body: [
+                    "id": id,
+                    "username": username
+                ]
+            )
         ) else {
             return TweetResponse(tweet: nil, error: "Error fetching data. Check your connection!")
         }
 
-        return tweet
-//         }
-//        return cachedTweet
+        if tweetResp.tweet == nil {
+            tweetResp.tweet = Tweet.sampleData
+            tweetResp.tweet?.text = "Could not fetch tweet, try again later."
+        }
+
+        return tweetResp
     }
 }

@@ -25,9 +25,9 @@ struct Tweet: Codable {
 
 extension Tweet {
     static let sampleData = Tweet(
-        id: "1",
-        text: "1 tweet. 48 hours. 200 installs.",
-        username: "TweetWidget",
+        id: "1641534972203769871",
+        text: "1 tweet. 48 hours. 179 downloads. Excited to build something useful!",
+        username: "cgarciamoran",
         replyCount: 96,
         likeCount: 1337,
         retweetCount: 40

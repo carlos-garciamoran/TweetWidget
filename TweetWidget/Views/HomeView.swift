@@ -21,7 +21,7 @@ struct HomeView: View {
             VStack(alignment: .leading) {
                 Text("Welcome to ")
                 Text("TweetWidget 👋").foregroundColor(accent)
-            }.font(.system(size: 42, weight: .light, design: .monospaced))
+            }.font(.system(size: 40, weight: .light, design: .monospaced))
 
             Divider().frame(height: 4.0).overlay(accent)
             Spacer()
