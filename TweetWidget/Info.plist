@@ -2,9 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>com.apple.security.application-groups</key>
+	<key>NSUserActivityTypes</key>
 	<array>
-		<string>group.com.cgmor.TweetWidget</string>
+		<string>SelectIntent</string>
+		<string>SelectRefreshIntervalIntent</string>
+		<string>SelectUserIntent</string>
+		<string>SelectUsernameIntent</string>
 	</array>
 </dict>
 </plist>

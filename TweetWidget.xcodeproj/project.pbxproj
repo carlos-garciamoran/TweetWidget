@@ -8,24 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		07219E9B29E24A85001C5D84 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07219E9A29E24A85001C5D84 /* User.swift */; };
-		07219E9C29E24AA6001C5D84 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07219E9A29E24A85001C5D84 /* User.swift */; };
+		073AB3C629EA5F00004584CC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 074925882995FE0300E3AB46 /* WidgetKit.framework */; };
+		073AB3C729EA5F00004584CC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0749258A2995FE0300E3AB46 /* SwiftUI.framework */; };
+		073AB3CA29EA5F00004584CC /* TweetPreviewWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073AB3C929EA5F00004584CC /* TweetPreviewWidgetBundle.swift */; };
+		073AB3CC29EA5F00004584CC /* TweetPreviewWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073AB3CB29EA5F00004584CC /* TweetPreviewWidgetLiveActivity.swift */; };
+		073AB3CE29EA5F00004584CC /* TweetPreviewWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073AB3CD29EA5F00004584CC /* TweetPreviewWidget.swift */; };
+		073AB3D029EA5F01004584CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 073AB3CF29EA5F01004584CC /* Assets.xcassets */; };
+		073AB3D429EA5F01004584CC /* TweetPreviewWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 073AB3C529EA5F00004584CC /* TweetPreviewWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		074925812995877800E3AB46 /* TweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074925802995877800E3AB46 /* TweetView.swift */; };
-		075C42BD29960AA80056296B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 074925882995FE0300E3AB46 /* WidgetKit.framework */; };
-		075C42BE29960AA80056296B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0749258A2995FE0300E3AB46 /* SwiftUI.framework */; };
-		075C42C129960AA80056296B /* DailyTweetWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C42C029960AA80056296B /* DailyTweetWidgetBundle.swift */; };
-		075C42C329960AA80056296B /* DailyTweetWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C42C229960AA80056296B /* DailyTweetWidgetLiveActivity.swift */; };
-		075C42C529960AA80056296B /* DailyTweetWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C42C429960AA80056296B /* DailyTweetWidget.swift */; };
-		075C42C829960AA80056296B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 075C42C729960AA80056296B /* Assets.xcassets */; };
-		075C42CA29960AA80056296B /* DailyTweetWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 075C42C629960AA80056296B /* DailyTweetWidget.intentdefinition */; };
-		075C42CB29960AA80056296B /* DailyTweetWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 075C42C629960AA80056296B /* DailyTweetWidget.intentdefinition */; };
-		075C42CE29960AA80056296B /* DailyTweetWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 075C42BC29960AA80056296B /* DailyTweetWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		07B9DB3E299639ED006B5C34 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE4D922990DD180086D009 /* Tweet.swift */; };
-		07B9DB3F29963A03006B5C34 /* TweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074925802995877800E3AB46 /* TweetView.swift */; };
 		07B9DB4229974FD2006B5C34 /* CoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B9DB4129974FD2006B5C34 /* CoreViewModel.swift */; };
-		07B9DB442999BA48006B5C34 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE4D972991F04D0086D009 /* Constants.swift */; };
-		07B9DB47299B4460006B5C34 /* CoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B9DB4129974FD2006B5C34 /* CoreViewModel.swift */; };
 		07B9DB50299B45AB006B5C34 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 07B9DB4F299B45AB006B5C34 /* Supabase */; };
-		07B9DB52299B45C0006B5C34 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 07B9DB51299B45C0006B5C34 /* Supabase */; };
 		07BE4D7D2990BE7A0086D009 /* TweetWidgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE4D7C2990BE7A0086D009 /* TweetWidgetApp.swift */; };
 		07BE4D7F2990BE7A0086D009 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE4D7E2990BE7A0086D009 /* HomeView.swift */; };
 		07BE4D812990BE7A0086D009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07BE4D802990BE7A0086D009 /* Assets.xcassets */; };
@@ -33,15 +25,50 @@
 		07BE4D8B2990C4C40086D009 /* CoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE4D8A2990C4C40086D009 /* CoreView.swift */; };
 		07BE4D932990DD180086D009 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE4D922990DD180086D009 /* Tweet.swift */; };
 		07BE4D982991F04D0086D009 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE4D972991F04D0086D009 /* Constants.swift */; };
+		07D14EED29EB64B0008A8482 /* TweetPreviewWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 07D14EEC29EB64B0008A8482 /* TweetPreviewWidget.intentdefinition */; };
+		07D14EEE29EB64B0008A8482 /* TweetPreviewWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 07D14EEC29EB64B0008A8482 /* TweetPreviewWidget.intentdefinition */; };
+		07D14EF529EB65E2008A8482 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073AB39229EA0811004584CC /* Intents.framework */; };
+		07D14EF829EB65E2008A8482 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D14EF729EB65E2008A8482 /* IntentHandler.swift */; };
+		07D14EFF29EB65E2008A8482 /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073AB39D29EA0811004584CC /* IntentsUI.framework */; };
+		07D14F0229EB65E2008A8482 /* IntentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D14F0129EB65E2008A8482 /* IntentViewController.swift */; };
+		07D14F0529EB65E2008A8482 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07D14F0329EB65E2008A8482 /* MainInterface.storyboard */; };
+		07D14F0929EB65E2008A8482 /* TweetWidget IntentUI.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 07D14EFE29EB65E2008A8482 /* TweetWidget IntentUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		07D14F0C29EB65E2008A8482 /* TweetWidget Intent.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 07D14EF429EB65E2008A8482 /* TweetWidget Intent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		07D14F1329EB669D008A8482 /* TweetPreviewWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 07D14EEC29EB64B0008A8482 /* TweetPreviewWidget.intentdefinition */; };
+		07D14F1429EB669E008A8482 /* TweetPreviewWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 07D14EEC29EB64B0008A8482 /* TweetPreviewWidget.intentdefinition */; };
+		07D14F1529EB66D7008A8482 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07219E9A29E24A85001C5D84 /* User.swift */; };
+		07D14F1629EB66D9008A8482 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07219E9A29E24A85001C5D84 /* User.swift */; };
+		07D14F1829EB6BCA008A8482 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 07D14F1729EB6BCA008A8482 /* Supabase */; };
+		07D14F1929EB6BD7008A8482 /* CoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B9DB4129974FD2006B5C34 /* CoreViewModel.swift */; };
+		07D14F1A29EB6C27008A8482 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE4D922990DD180086D009 /* Tweet.swift */; };
+		07D14F1B29EB70FD008A8482 /* TweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074925802995877800E3AB46 /* TweetView.swift */; };
+		07D14F1C29EB741A008A8482 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE4D972991F04D0086D009 /* Constants.swift */; };
+		07D14F1E29EB7A88008A8482 /* TweetPreviewWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073AB3CD29EA5F00004584CC /* TweetPreviewWidget.swift */; };
+		07D14F1F29EB7BBB008A8482 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D14EF729EB65E2008A8482 /* IntentHandler.swift */; };
+		07D14F2029EB7ECD008A8482 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07219E9A29E24A85001C5D84 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		075C42CC29960AA80056296B /* PBXContainerItemProxy */ = {
+		073AB3D229EA5F01004584CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 07BE4D712990BE7A0086D009 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 075C42BB29960AA80056296B;
-			remoteInfo = DailyTweetWidgetExtension;
+			remoteGlobalIDString = 073AB3C429EA5F00004584CC;
+			remoteInfo = TweetPreviewWidgetExtension;
+		};
+		07D14F0729EB65E2008A8482 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07BE4D712990BE7A0086D009 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07D14EFD29EB65E2008A8482;
+			remoteInfo = "TweetWidget IntentUI";
+		};
+		07D14F0A29EB65E2008A8482 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07BE4D712990BE7A0086D009 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07D14EF329EB65E2008A8482;
+			remoteInfo = "TweetWidget Intent";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -52,7 +79,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				075C42CE29960AA80056296B /* DailyTweetWidgetExtension.appex in Embed Foundation Extensions */,
+				07D14F0929EB65E2008A8482 /* TweetWidget IntentUI.appex in Embed Foundation Extensions */,
+				07D14F0C29EB65E2008A8482 /* TweetWidget Intent.appex in Embed Foundation Extensions */,
+				073AB3D429EA5F01004584CC /* TweetPreviewWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,17 +90,18 @@
 
 /* Begin PBXFileReference section */
 		07219E9A29E24A85001C5D84 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		073AB38C29EA028B004584CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		073AB39229EA0811004584CC /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		073AB39D29EA0811004584CC /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		073AB3C529EA5F00004584CC /* TweetPreviewWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TweetPreviewWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		073AB3C929EA5F00004584CC /* TweetPreviewWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetPreviewWidgetBundle.swift; sourceTree = "<group>"; };
+		073AB3CB29EA5F00004584CC /* TweetPreviewWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetPreviewWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		073AB3CD29EA5F00004584CC /* TweetPreviewWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetPreviewWidget.swift; sourceTree = "<group>"; };
+		073AB3CF29EA5F01004584CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		073AB3D129EA5F01004584CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		074925802995877800E3AB46 /* TweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetView.swift; sourceTree = "<group>"; };
 		074925882995FE0300E3AB46 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		0749258A2995FE0300E3AB46 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		075C42BC29960AA80056296B /* DailyTweetWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DailyTweetWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		075C42C029960AA80056296B /* DailyTweetWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTweetWidgetBundle.swift; sourceTree = "<group>"; };
-		075C42C229960AA80056296B /* DailyTweetWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTweetWidgetLiveActivity.swift; sourceTree = "<group>"; };
-		075C42C429960AA80056296B /* DailyTweetWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTweetWidget.swift; sourceTree = "<group>"; };
-		075C42C629960AA80056296B /* DailyTweetWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = DailyTweetWidget.intentdefinition; sourceTree = "<group>"; };
-		075C42C729960AA80056296B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		075C42C929960AA80056296B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07B9DB3929962FCB006B5C34 /* DailyTweetWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DailyTweetWidgetExtension.entitlements; sourceTree = "<group>"; };
 		07B9DB4029973585006B5C34 /* TweetWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TweetWidget.entitlements; sourceTree = "<group>"; };
 		07B9DB4129974FD2006B5C34 /* CoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoreViewModel.swift; path = TweetWidget/Models/CoreViewModel.swift; sourceTree = SOURCE_ROOT; };
 		07BE4D792990BE7A0086D009 /* TweetWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweetWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,16 +112,24 @@
 		07BE4D8A2990C4C40086D009 /* CoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreView.swift; sourceTree = "<group>"; };
 		07BE4D922990DD180086D009 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		07BE4D972991F04D0086D009 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		07D14EEC29EB64B0008A8482 /* TweetPreviewWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = TweetPreviewWidget.intentdefinition; sourceTree = "<group>"; };
+		07D14EF429EB65E2008A8482 /* TweetWidget Intent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TweetWidget Intent.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		07D14EF729EB65E2008A8482 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		07D14EF929EB65E2008A8482 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07D14EFE29EB65E2008A8482 /* TweetWidget IntentUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TweetWidget IntentUI.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		07D14F0129EB65E2008A8482 /* IntentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewController.swift; sourceTree = "<group>"; };
+		07D14F0429EB65E2008A8482 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		07D14F0629EB65E2008A8482 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		075C42B929960AA80056296B /* Frameworks */ = {
+		073AB3C229EA5F00004584CC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				075C42BE29960AA80056296B /* SwiftUI.framework in Frameworks */,
-				075C42BD29960AA80056296B /* WidgetKit.framework in Frameworks */,
-				07B9DB52299B45C0006B5C34 /* Supabase in Frameworks */,
+				073AB3C729EA5F00004584CC /* SwiftUI.framework in Frameworks */,
+				073AB3C629EA5F00004584CC /* WidgetKit.framework in Frameworks */,
+				07D14F1829EB6BCA008A8482 /* Supabase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,30 +141,47 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		07D14EF129EB65E2008A8482 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07D14EF529EB65E2008A8482 /* Intents.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07D14EFB29EB65E2008A8482 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07D14EFF29EB65E2008A8482 /* IntentsUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		073AB3C829EA5F00004584CC /* TweetPreviewWidget */ = {
+			isa = PBXGroup;
+			children = (
+				073AB3C929EA5F00004584CC /* TweetPreviewWidgetBundle.swift */,
+				073AB3CB29EA5F00004584CC /* TweetPreviewWidgetLiveActivity.swift */,
+				073AB3CD29EA5F00004584CC /* TweetPreviewWidget.swift */,
+				07D14EEC29EB64B0008A8482 /* TweetPreviewWidget.intentdefinition */,
+				073AB3CF29EA5F01004584CC /* Assets.xcassets */,
+				073AB3D129EA5F01004584CC /* Info.plist */,
+			);
+			path = TweetPreviewWidget;
+			sourceTree = "<group>";
+		};
 		074925872995FE0300E3AB46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				074925882995FE0300E3AB46 /* WidgetKit.framework */,
 				0749258A2995FE0300E3AB46 /* SwiftUI.framework */,
+				073AB39229EA0811004584CC /* Intents.framework */,
+				073AB39D29EA0811004584CC /* IntentsUI.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		075C42BF29960AA80056296B /* DailyTweetWidget */ = {
-			isa = PBXGroup;
-			children = (
-				075C42C729960AA80056296B /* Assets.xcassets */,
-				07B9DB3929962FCB006B5C34 /* DailyTweetWidgetExtension.entitlements */,
-				075C42C029960AA80056296B /* DailyTweetWidgetBundle.swift */,
-				075C42C229960AA80056296B /* DailyTweetWidgetLiveActivity.swift */,
-				075C42C429960AA80056296B /* DailyTweetWidget.swift */,
-				075C42C629960AA80056296B /* DailyTweetWidget.intentdefinition */,
-				075C42C929960AA80056296B /* Info.plist */,
-			);
-			path = DailyTweetWidget;
 			sourceTree = "<group>";
 		};
 		07B9DB3A29963256006B5C34 /* Views */ = {
@@ -143,7 +198,9 @@
 			isa = PBXGroup;
 			children = (
 				07BE4D7B2990BE7A0086D009 /* TweetWidget */,
-				075C42BF29960AA80056296B /* DailyTweetWidget */,
+				073AB3C829EA5F00004584CC /* TweetPreviewWidget */,
+				07D14EF629EB65E2008A8482 /* TweetWidget Intent */,
+				07D14F0029EB65E2008A8482 /* TweetWidget IntentUI */,
 				074925872995FE0300E3AB46 /* Frameworks */,
 				07BE4D7A2990BE7A0086D009 /* Products */,
 			);
@@ -153,7 +210,9 @@
 			isa = PBXGroup;
 			children = (
 				07BE4D792990BE7A0086D009 /* TweetWidget.app */,
-				075C42BC29960AA80056296B /* DailyTweetWidgetExtension.appex */,
+				073AB3C529EA5F00004584CC /* TweetPreviewWidgetExtension.appex */,
+				07D14EF429EB65E2008A8482 /* TweetWidget Intent.appex */,
+				07D14EFE29EB65E2008A8482 /* TweetWidget IntentUI.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -161,6 +220,7 @@
 		07BE4D7B2990BE7A0086D009 /* TweetWidget */ = {
 			isa = PBXGroup;
 			children = (
+				073AB38C29EA028B004584CC /* Info.plist */,
 				07BE4D802990BE7A0086D009 /* Assets.xcassets */,
 				07B9DB4029973585006B5C34 /* TweetWidget.entitlements */,
 				07BE4D972991F04D0086D009 /* Constants.swift */,
@@ -190,27 +250,46 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		07D14EF629EB65E2008A8482 /* TweetWidget Intent */ = {
+			isa = PBXGroup;
+			children = (
+				07D14EF729EB65E2008A8482 /* IntentHandler.swift */,
+				07D14EF929EB65E2008A8482 /* Info.plist */,
+			);
+			path = "TweetWidget Intent";
+			sourceTree = "<group>";
+		};
+		07D14F0029EB65E2008A8482 /* TweetWidget IntentUI */ = {
+			isa = PBXGroup;
+			children = (
+				07D14F0129EB65E2008A8482 /* IntentViewController.swift */,
+				07D14F0329EB65E2008A8482 /* MainInterface.storyboard */,
+				07D14F0629EB65E2008A8482 /* Info.plist */,
+			);
+			path = "TweetWidget IntentUI";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		075C42BB29960AA80056296B /* DailyTweetWidgetExtension */ = {
+		073AB3C429EA5F00004584CC /* TweetPreviewWidgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 075C42D129960AA80056296B /* Build configuration list for PBXNativeTarget "DailyTweetWidgetExtension" */;
+			buildConfigurationList = 073AB3D529EA5F01004584CC /* Build configuration list for PBXNativeTarget "TweetPreviewWidgetExtension" */;
 			buildPhases = (
-				075C42B829960AA80056296B /* Sources */,
-				075C42B929960AA80056296B /* Frameworks */,
-				075C42BA29960AA80056296B /* Resources */,
+				073AB3C129EA5F00004584CC /* Sources */,
+				073AB3C229EA5F00004584CC /* Frameworks */,
+				073AB3C329EA5F00004584CC /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = DailyTweetWidgetExtension;
+			name = TweetPreviewWidgetExtension;
 			packageProductDependencies = (
-				07B9DB51299B45C0006B5C34 /* Supabase */,
+				07D14F1729EB6BCA008A8482 /* Supabase */,
 			);
-			productName = DailyTweetWidgetExtension;
-			productReference = 075C42BC29960AA80056296B /* DailyTweetWidgetExtension.appex */;
+			productName = TweetPreviewWidgetExtension;
+			productReference = 073AB3C529EA5F00004584CC /* TweetPreviewWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		07BE4D782990BE7A0086D009 /* TweetWidget */ = {
@@ -225,7 +304,9 @@
 			buildRules = (
 			);
 			dependencies = (
-				075C42CD29960AA80056296B /* PBXTargetDependency */,
+				073AB3D329EA5F01004584CC /* PBXTargetDependency */,
+				07D14F0829EB65E2008A8482 /* PBXTargetDependency */,
+				07D14F0B29EB65E2008A8482 /* PBXTargetDependency */,
 			);
 			name = TweetWidget;
 			packageProductDependencies = (
@@ -235,6 +316,40 @@
 			productReference = 07BE4D792990BE7A0086D009 /* TweetWidget.app */;
 			productType = "com.apple.product-type.application";
 		};
+		07D14EF329EB65E2008A8482 /* TweetWidget Intent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07D14F1029EB65E2008A8482 /* Build configuration list for PBXNativeTarget "TweetWidget Intent" */;
+			buildPhases = (
+				07D14EF029EB65E2008A8482 /* Sources */,
+				07D14EF129EB65E2008A8482 /* Frameworks */,
+				07D14EF229EB65E2008A8482 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TweetWidget Intent";
+			productName = "TweetWidget Intent";
+			productReference = 07D14EF429EB65E2008A8482 /* TweetWidget Intent.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		07D14EFD29EB65E2008A8482 /* TweetWidget IntentUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07D14F0D29EB65E2008A8482 /* Build configuration list for PBXNativeTarget "TweetWidget IntentUI" */;
+			buildPhases = (
+				07D14EFA29EB65E2008A8482 /* Sources */,
+				07D14EFB29EB65E2008A8482 /* Frameworks */,
+				07D14EFC29EB65E2008A8482 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TweetWidget IntentUI";
+			productName = "TweetWidget IntentUI";
+			productReference = 07D14EFE29EB65E2008A8482 /* TweetWidget IntentUI.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -242,14 +357,20 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					075C42BB29960AA80056296B = {
-						CreatedOnToolsVersion = 14.2;
+					073AB3C429EA5F00004584CC = {
+						CreatedOnToolsVersion = 14.3;
 					};
 					07BE4D782990BE7A0086D009 = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					07D14EF329EB65E2008A8482 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					07D14EFD29EB65E2008A8482 = {
+						CreatedOnToolsVersion = 14.3;
 					};
 				};
 			};
@@ -270,17 +391,19 @@
 			projectRoot = "";
 			targets = (
 				07BE4D782990BE7A0086D009 /* TweetWidget */,
-				075C42BB29960AA80056296B /* DailyTweetWidgetExtension */,
+				073AB3C429EA5F00004584CC /* TweetPreviewWidgetExtension */,
+				07D14EF329EB65E2008A8482 /* TweetWidget Intent */,
+				07D14EFD29EB65E2008A8482 /* TweetWidget IntentUI */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		075C42BA29960AA80056296B /* Resources */ = {
+		073AB3C329EA5F00004584CC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				075C42C829960AA80056296B /* Assets.xcassets in Resources */,
+				073AB3D029EA5F01004584CC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,22 +416,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		07D14EF229EB65E2008A8482 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07D14EFC29EB65E2008A8482 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07D14F0529EB65E2008A8482 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		075C42B829960AA80056296B /* Sources */ = {
+		073AB3C129EA5F00004584CC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				075C42C329960AA80056296B /* DailyTweetWidgetLiveActivity.swift in Sources */,
-				07B9DB3E299639ED006B5C34 /* Tweet.swift in Sources */,
-				075C42C129960AA80056296B /* DailyTweetWidgetBundle.swift in Sources */,
-				07B9DB47299B4460006B5C34 /* CoreViewModel.swift in Sources */,
-				075C42CA29960AA80056296B /* DailyTweetWidget.intentdefinition in Sources */,
-				07219E9C29E24AA6001C5D84 /* User.swift in Sources */,
-				07B9DB3F29963A03006B5C34 /* TweetView.swift in Sources */,
-				075C42C529960AA80056296B /* DailyTweetWidget.swift in Sources */,
-				07B9DB442999BA48006B5C34 /* Constants.swift in Sources */,
+				073AB3CA29EA5F00004584CC /* TweetPreviewWidgetBundle.swift in Sources */,
+				07D14F1929EB6BD7008A8482 /* CoreViewModel.swift in Sources */,
+				073AB3CE29EA5F00004584CC /* TweetPreviewWidget.swift in Sources */,
+				07D14F1A29EB6C27008A8482 /* Tweet.swift in Sources */,
+				073AB3CC29EA5F00004584CC /* TweetPreviewWidgetLiveActivity.swift in Sources */,
+				07D14F1529EB66D7008A8482 /* User.swift in Sources */,
+				07D14F1B29EB70FD008A8482 /* TweetView.swift in Sources */,
+				07D14EEE29EB64B0008A8482 /* TweetPreviewWidget.intentdefinition in Sources */,
+				07D14F1C29EB741A008A8482 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,38 +457,80 @@
 				07BE4D7F2990BE7A0086D009 /* HomeView.swift in Sources */,
 				07BE4D8B2990C4C40086D009 /* CoreView.swift in Sources */,
 				07B9DB4229974FD2006B5C34 /* CoreViewModel.swift in Sources */,
-				075C42CB29960AA80056296B /* DailyTweetWidget.intentdefinition in Sources */,
 				07BE4D932990DD180086D009 /* Tweet.swift in Sources */,
 				07BE4D982991F04D0086D009 /* Constants.swift in Sources */,
 				074925812995877800E3AB46 /* TweetView.swift in Sources */,
+				07D14EED29EB64B0008A8482 /* TweetPreviewWidget.intentdefinition in Sources */,
 				07219E9B29E24A85001C5D84 /* User.swift in Sources */,
+				07D14F1E29EB7A88008A8482 /* TweetPreviewWidget.swift in Sources */,
 				07BE4D7D2990BE7A0086D009 /* TweetWidgetApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07D14EF029EB65E2008A8482 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07D14EF829EB65E2008A8482 /* IntentHandler.swift in Sources */,
+				07D14F1329EB669D008A8482 /* TweetPreviewWidget.intentdefinition in Sources */,
+				07D14F1629EB66D9008A8482 /* User.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07D14EFA29EB65E2008A8482 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07D14F2029EB7ECD008A8482 /* User.swift in Sources */,
+				07D14F0229EB65E2008A8482 /* IntentViewController.swift in Sources */,
+				07D14F1F29EB7BBB008A8482 /* IntentHandler.swift in Sources */,
+				07D14F1429EB669E008A8482 /* TweetPreviewWidget.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		075C42CD29960AA80056296B /* PBXTargetDependency */ = {
+		073AB3D329EA5F01004584CC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 075C42BB29960AA80056296B /* DailyTweetWidgetExtension */;
-			targetProxy = 075C42CC29960AA80056296B /* PBXContainerItemProxy */;
+			target = 073AB3C429EA5F00004584CC /* TweetPreviewWidgetExtension */;
+			targetProxy = 073AB3D229EA5F01004584CC /* PBXContainerItemProxy */;
+		};
+		07D14F0829EB65E2008A8482 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07D14EFD29EB65E2008A8482 /* TweetWidget IntentUI */;
+			targetProxy = 07D14F0729EB65E2008A8482 /* PBXContainerItemProxy */;
+		};
+		07D14F0B29EB65E2008A8482 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07D14EF329EB65E2008A8482 /* TweetWidget Intent */;
+			targetProxy = 07D14F0A29EB65E2008A8482 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		07D14F0329EB65E2008A8482 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07D14F0429EB65E2008A8482 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		075C42CF29960AA80056296B /* Debug */ = {
+		073AB3D629EA5F01004584CC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = DailyTweetWidget/DailyTweetWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 77N3PG72H2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DailyTweetWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = DailyTweetWidget;
+				INFOPLIST_FILE = TweetPreviewWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TweetPreviewWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -358,8 +538,8 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cgmor.TweetWidget.DailyTweetWidget;
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cgmor.TweetWidget.TweetPreviewWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -368,18 +548,17 @@
 			};
 			name = Debug;
 		};
-		075C42D029960AA80056296B /* Release */ = {
+		073AB3D729EA5F01004584CC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = DailyTweetWidget/DailyTweetWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 77N3PG72H2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DailyTweetWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = DailyTweetWidget;
+				INFOPLIST_FILE = TweetPreviewWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TweetPreviewWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -387,8 +566,8 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cgmor.TweetWidget.DailyTweetWidget;
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cgmor.TweetWidget.TweetPreviewWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -524,6 +703,7 @@
 				DEVELOPMENT_TEAM = 77N3PG72H2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TweetWidget/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -534,7 +714,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cgmor.TweetWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -559,6 +739,7 @@
 				DEVELOPMENT_TEAM = 77N3PG72H2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TweetWidget/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -569,7 +750,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cgmor.TweetWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -581,14 +762,118 @@
 			};
 			name = Release;
 		};
+		07D14F0E29EB65E2008A8482 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 77N3PG72H2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TweetWidget IntentUI/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "TweetWidget IntentUI";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cgmor.TweetWidget.TweetWidget-IntentUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		07D14F0F29EB65E2008A8482 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 77N3PG72H2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TweetWidget IntentUI/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "TweetWidget IntentUI";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cgmor.TweetWidget.TweetWidget-IntentUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		07D14F1129EB65E2008A8482 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 77N3PG72H2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TweetWidget Intent/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "TweetWidget Intent";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cgmor.TweetWidget.TweetWidget-Intent";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		07D14F1229EB65E2008A8482 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 77N3PG72H2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TweetWidget Intent/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "TweetWidget Intent";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cgmor.TweetWidget.TweetWidget-Intent";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		075C42D129960AA80056296B /* Build configuration list for PBXNativeTarget "DailyTweetWidgetExtension" */ = {
+		073AB3D529EA5F01004584CC /* Build configuration list for PBXNativeTarget "TweetPreviewWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				075C42CF29960AA80056296B /* Debug */,
-				075C42D029960AA80056296B /* Release */,
+				073AB3D629EA5F01004584CC /* Debug */,
+				073AB3D729EA5F01004584CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -607,6 +892,24 @@
 			buildConfigurations = (
 				07BE4D882990BE7A0086D009 /* Debug */,
 				07BE4D892990BE7A0086D009 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07D14F0D29EB65E2008A8482 /* Build configuration list for PBXNativeTarget "TweetWidget IntentUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07D14F0E29EB65E2008A8482 /* Debug */,
+				07D14F0F29EB65E2008A8482 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07D14F1029EB65E2008A8482 /* Build configuration list for PBXNativeTarget "TweetWidget Intent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07D14F1129EB65E2008A8482 /* Debug */,
+				07D14F1229EB65E2008A8482 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -630,7 +933,7 @@
 			package = 07B9DB4E299B45AB006B5C34 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Supabase;
 		};
-		07B9DB51299B45C0006B5C34 /* Supabase */ = {
+		07D14F1729EB6BCA008A8482 /* Supabase */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 07B9DB4E299B45AB006B5C34 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Supabase;

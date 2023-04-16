@@ -1,15 +1,15 @@
 //
-//  DailyTweetLiveActivity.swift
-//  DailyTweet
+//  TweetPreviewWidgetLiveActivity.swift
+//  TweetPreviewWidget
 //
-//  Created by Carlos García Morán on 2/9/23.
+//  Created by Carlos García Morán on 4/14/23.
 //
 
 import ActivityKit
 import WidgetKit
 import SwiftUI
 
-struct DailyTweetAttributes: ActivityAttributes {
+struct TweetPreviewWidgetAttributes: ActivityAttributes {
     public struct ContentState: Codable, Hashable {
         // Dynamic stateful properties about your activity go here!
         var value: Int
@@ -19,9 +19,10 @@ struct DailyTweetAttributes: ActivityAttributes {
     var name: String
 }
 
-struct DailyTweetLiveActivity: Widget {
+@available(iOSApplicationExtension 16.2, *)
+struct TweetPreviewWidgetLiveActivity: Widget {
     var body: some WidgetConfiguration {
-        ActivityConfiguration(for: DailyTweetAttributes.self) { context in
+        ActivityConfiguration(for: TweetPreviewWidgetAttributes.self) { context in
             // Lock screen/banner UI goes here
             VStack {
                 Text("Hello")
@@ -56,9 +57,10 @@ struct DailyTweetLiveActivity: Widget {
     }
 }
 
-struct DailyTweetLiveActivity_Previews: PreviewProvider {
-    static let attributes = DailyTweetAttributes(name: "Me")
-    static let contentState = DailyTweetAttributes.ContentState(value: 3)
+@available(iOSApplicationExtension 16.2, *)
+struct TweetPreviewWidgetLiveActivity_Previews: PreviewProvider {
+    static let attributes = TweetPreviewWidgetAttributes(name: "Me")
+    static let contentState = TweetPreviewWidgetAttributes.ContentState(value: 3)
 
     static var previews: some View {
         attributes
