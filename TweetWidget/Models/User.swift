@@ -7,6 +7,8 @@
 
 import Foundation
 
+let userDefaults = UserDefaults.init(suiteName: "group.com.cgmor.TweetWidget")!
+
 struct User: Codable {
     let id: String?
     let username: String?
@@ -14,29 +16,42 @@ struct User: Codable {
 
 extension User {
     static let sampleData = User(
-        id: "",
-        username: ""
+        id: "12",
+        username: "jack"
     )
+
+    static func getUserFromStorage() -> User {
+        if userDefaults.object(forKey: "user") == nil {
+            return User.sampleData
+        }
+
+        do {
+            let encodedUser = userDefaults.object(forKey: "user") as? Data
+            let decodedUser = try JSONDecoder().decode(User.self, from: encodedUser!)
+
+            return decodedUser
+        } catch {
+            return User.sampleData
+        }
+    }
 }
 
-// TODO: add parameter id ...
-//          1. user stores username
-//          2. get id from Supabase
-//          3. store in local storage
 struct UserDetail {
-    let id: String          // Twitter id (12)
-    let name: String        // Twitter username (@jack)
-    let profilePicURL: String  // May want to turn it into image stored on device
-
-    static let availableUsernames = [
-        UserDetail(id: "12", name: "naval", profilePicURL: "🧘‍♂️"),
-        UserDetail(id: "745273", name: "jack", profilePicURL: "☯️"),
-        UserDetail(id: "44196397", name: "elonmusk", profilePicURL: "🚀"),
-    ]
+    let id: String
+    let username: String
+    let profilePicURL: String  // May want to make it an image object (stored on device)
 
     static let availableUsers = [
-        UserDetail(id: "12", name: "naval", profilePicURL: "🧘‍♂️"),
-        UserDetail(id: "745273", name: "jack", profilePicURL: "☯️"),
-        UserDetail(id: "44196397", name: "elonmusk", profilePicURL: "🚀"),
+        UserDetail(id: "12", username: "jack", profilePicURL: "☯️"),
+        UserDetail(id: "745273", username: "naval", profilePicURL: "🧘‍♂️"),
+        UserDetail(id: "44196397", username: "elonmusk", profilePicURL: "🚀"),
     ]
+}
+
+extension UserDetail {
+    static let sampleData = UserDetail(
+        id: "12",
+        username: "jack",
+        profilePicURL: "☯️"
+    )
 }

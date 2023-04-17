@@ -12,7 +12,6 @@
 			<array/>
 			<key>IntentsSupported</key>
 			<array>
-				<string>SelectRefreshIntervalIntent</string>
 				<string>SelectUserIntent</string>
 			</array>
 		</dict>

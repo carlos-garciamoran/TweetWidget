@@ -10,7 +10,6 @@ import WidgetKit
 
 let accent = Color(red: 0.3, green: 0.9, blue: 0.9, opacity: 1.0)
 let lighterGray = Color(red: 0.7, green: 0.7, blue: 0.7, opacity: 1.0)
-let userDefaults = UserDefaults(suiteName: "group.com.cgmor.TweetWidget")!
 
 struct ErrorView: View {
     let error: String
@@ -30,12 +29,10 @@ struct CoreView: View {
     @FocusState private var isTextFieldFocused: Bool
     @ObservedObject private var textBindingManager = TextBindingManager()
     @StateObject private var model = CoreViewModel()
-    @State public var tweetResp = TweetResponse(tweet: Tweet.sampleData, error: nil)
     @State public var userResp = UserResponse(id: nil, error: nil)
-    @State private var storedUsername: String = (userDefaults.string(forKey: "username") ?? "")  // TODO: get rid of var and read from userResp.
+    @State private var storedUser: User = User.getUserFromStorage()
 
     init() {
-        storedUsername = userDefaults.string(forKey: "username") ?? ""
         invalidChars.remove("_")
     }
 
@@ -43,7 +40,7 @@ struct CoreView: View {
         VStack (alignment: .leading) {
             HStack {
                 // DESIGN: animate (bounce) emoji
-                if storedUsername == "" {
+                if storedUser.username == "" || storedUser.username == nil {
                     Text("Add your favorite Twitter user ")
                         .font(.system(size: 24, weight: .light))
                 } else {
@@ -56,9 +53,9 @@ struct CoreView: View {
             // TODO: if storedUsername not null (i.e., tweet retrieved), hide input box, show add widget msg, and display "done" button
             HStack {
                 Text("👉 ").font(.title2)   // TODO: animate!
-                
+
                 // TODO: make placeholder lighterGray
-                TextField("naval, paulg, ...", text: $textBindingManager.text)
+                TextField("naval, jack, ...", text: $textBindingManager.text)
                     .focused($isTextFieldFocused)
                     .disableAutocorrection(true)
                     .textInputAutocapitalization(.never)
@@ -66,7 +63,7 @@ struct CoreView: View {
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
                             .stroke(
-                                userResp.error == nil && tweetResp.error == nil
+                                userResp.error == nil
                                     ? accent
                                     : Color.red
                                 , lineWidth: 2
@@ -77,7 +74,6 @@ struct CoreView: View {
                     }
                     .onTapGesture {
                         userResp.error = nil
-                        tweetResp.error = nil
                     }
                     .onChange(of: textBindingManager.text) { _ in
                         let sanitizedUsername = textBindingManager.text.trimmingCharacters(
@@ -87,73 +83,65 @@ struct CoreView: View {
                     }
                     .onSubmit {
                         let submittedUsername = textBindingManager.text.lowercased()
-                        
-                        if submittedUsername == storedUsername {
-                            userResp.error = "You are already getting tweets from @\(storedUsername)"
+
+                        if submittedUsername == storedUser.username {
+                            userResp.error = "You are already getting tweets from @\(storedUser.username!)"
                             return
                         }
-                        
+
                         if submittedUsername.count < 4 {
                             userResp.error = "Username too short"
                             return
                         }
 
-                        // OPTIMIZE: extract into model method.
+                        // TODO: get Twitter *name* from helper -> refactor backend.
                         Task {
-                            userResp = await model.getUserId(username: submittedUsername)
-                            
-                            if userResp.id != nil  {  // Success.
-                                tweetResp = await model.getRandomTweetFromUser(username: submittedUsername, id: userResp.id!)
+                            print("[*] Getting Twitter user id...")
 
-                                if tweetResp.error == nil && tweetResp.tweet != nil {
-                                    // NOTE: could refactor to get encoded user.
-                                    let user = User(id: userResp.id!, username: submittedUsername)
-                                    let userData = try! JSONEncoder().encode(user)
-                                    let tweetData = try! JSONEncoder().encode(tweetResp.tweet)
-                                    
-                                    // TODO: enhance error handling -> make sure we can decode tweet and only reload if so.
-                                    
-                                    userDefaults.set(tweetData, forKey: "tweet")
-                                    userDefaults.set(userData, forKey: "user")
-                                    userDefaults.set(submittedUsername, forKey: "username")
-                                    
-                                    storedUsername = submittedUsername  // Update state.
-                                    
-                                    WidgetCenter.shared.reloadAllTimelines()
-                                }
+                            userResp = await model.getUserId(username: submittedUsername)
+
+                            // Store the new user in local storage if we got a user id.
+                            if userResp.id != nil  {  // Success.
+                                let user = User(id: userResp.id, username: submittedUsername)
+                                let encodedUser = try! JSONEncoder().encode(user)
+
+                                print("\t[*] Storing user as \(user)")
+
+                                userDefaults.set(encodedUser, forKey: "user")
+
+                                storedUser = user   // Update state.
+
+                                WidgetCenter.shared.reloadAllTimelines()
                             }
                         }
                     }
             }
-            
-            // TODO: move error state variable to CoreView and create Error component!
-            // TODO: consolidate 2 views into one (create @State error var?) -> think React!
+
             VStack {
                 if userResp.error != nil {
                     ErrorView(error: userResp.error!)
                 }
-                if tweetResp.error != nil {
-                    ErrorView(error: tweetResp.error!)
-                }
-            }.frame(height: 1).padding(.top, 8)
-            
+            }.frame(height: 1).padding(.top, 5)
+
             // TODO: #DESIGN push down to bottom.
-            if !storedUsername.isEmpty {
+            if storedUser.username != nil {
                 VStack {
                     HStack(spacing: 0) {
                         Text("ℹ️")
                             .font(.system(size: 10, weight: .light, design: .monospaced))
                             .padding(.trailing, 4)
                         Text("You are getting tweets from ")
-                        // TODO: open on Twitter app.
-                        Link(destination: URL(string: "https://twitter.com/" + storedUsername)!, label: {
-                            Text("@" + storedUsername)
+
+                        // TODO: open user profile on Twitter app.
+                        Link(destination: URL(string: "https://twitter.com/" + storedUser.username!)!, label: {
+                            Text("@" + storedUser.username!)
                                 .bold()
                                 .foregroundColor(.white)
                         })
                     }
                     .font(.footnote)
                     .frame(maxWidth: .infinity, alignment: .center)
+                    .padding(.top, 20)
                 }
             }
         }

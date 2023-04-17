@@ -8,7 +8,6 @@
 import Intents
 
 let defaultUserINO = UserINO(identifier: "naval", display: "naval")
-let userDefaults = UserDefaults.init(suiteName: "group.com.cgmor.TweetWidget")!
 
 class IntentHandler: INExtension, SelectUserIntentHandling {
     override func handler(for intent: INIntent) -> Any {
@@ -18,52 +17,53 @@ class IntentHandler: INExtension, SelectUserIntentHandling {
         return self
     }
 
+    /// For now, return an array containing the user stored in storage.
     func provideUserOptionsCollection(
         for intent: SelectUserIntent,
         with completion: @escaping (INObjectCollection<UserINO>?, Error?) -> Void
     ) {
-//          let users = getUsersFromStorage()
-        let users: [UserINO] = UserDetail.availableUsers.map { user in
-            print("NEW added \(user.name)")
-            // TODO: implement displayImage
-            return UserINO(
-                identifier: user.name,
-                display: user.name
-                // display: "\(user.profilePicURL) - \(user.name)"
-            )
-        }
+        // NOTE: if no user is set, Jack Dorsey will be returned ;)
+        let rawUser = User.getUserFromStorage()
+        
+        print("@secured -> ", rawUser)
 
-        print("[i] NEW users: ", users)
+        // Parse the User object properties into UserINO
+        let user = UserINO(
+            identifier: rawUser.id,
+            display: rawUser.username!
+        )
 
         // Create a collection with the array of users.
-        let collection = INObjectCollection(items: users)
+        let collection = INObjectCollection(items: [user])
 
         // Call the completion handler, passing the collection.
         completion(collection, nil)
     }
 
-//    private func getUsersFromStorage() -> [UserINO] {
-//        /// User has not stored any user, return an empty array.
-//        if userDefaults.object(forKey: "users") == nil {
-//            print("no key set")
-//            return [defaultUserINO]
-//        }
-//
-//        do {
-//            let encodedUsers = userDefaults.object(forKey: "users") as? Data
-//            let decodedUsers = try JSONDecoder().decode([User].self, from: encodedUsers!)
-//
-//            let users: [UserINO] = decodedUsers.map { user in
-//                return UserINO(
-//                    identifier: user.id,
-//                    display: user.username ?? ""
-//                )
-//            }
-//
-//            return users
-//        } catch {
-//            print("decoding error")
-//            return [defaultUserINO]
-//        }
-//    }
+    // NOTE: currently unused.
+    // TODO: implement displayImage
+    private func getUsersFromStorage() -> [UserINO] {
+        let userDefaults = UserDefaults.init(suiteName: "group.com.cgmor.TweetWidget")!
+
+        /// User has not stored any user, return an empty array.
+        if userDefaults.object(forKey: "users") == nil {
+            return [defaultUserINO]
+        }
+
+        do {
+            let encodedUsers = userDefaults.object(forKey: "users") as? Data
+            let decodedUsers = try JSONDecoder().decode([User].self, from: encodedUsers!)
+
+            let users: [UserINO] = decodedUsers.map { user in
+                return UserINO(
+                    identifier: user.id,
+                    display: user.username ?? ""
+                )
+            }
+
+            return users
+        } catch {
+            return [defaultUserINO]
+        }
+    }
 }

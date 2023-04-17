@@ -33,26 +33,41 @@ class CoreViewModel: ObservableObject {
     let supabaseClient = SupabaseClient(supabaseURL: Constants.SupabaseURL, supabaseKey: Constants.SupabaseKey)
 
     func getUserId(username: String) async -> UserResponse {
+        // Query Supabase to get the user's Twitter id.
         let query = supabaseClient.database
-            .from("tracked_users")
+            .from("twitter_users")
             .select(columns: "id")
             .eq(column: "username", value: username)
             .single()
 
-        // Get user id from DB.
-        guard let cachedUser: UserResponse = try? await query.execute().value else {
-            // No user found, hit Edge function to fetch user id.
+        // Get user id from Supabase.
+        guard let existingUser: UserResponse = try? await query.execute().value else {
+            print("\t[!] No user found")
+            print("\t[*] Hitting Edge func with username=\(username)...")
+            
+            // No user found; hit Edge function to fetch user id through Twitter API.
             guard let user: UserResponse = try? await supabaseClient.functions.invoke(
                 functionName: "fetch-user-id",
-                invokeOptions: .init(body: ["username": username])
+                invokeOptions: .init(
+                    headers: [
+                        "Authorization": "Bearer \(Constants.SupabaseKey)"
+                    ],
+                    body: [
+                        "username": username
+                    ]
+                )
             ) else {
-                return UserResponse(id: nil, error: "Error fetching data. Check your connection!")
+                return UserResponse(id: nil, error: "Error fetching username. We are working on it!")
             }
+
+            print("\t[i] Got user", user)
 
             return user
         }
+        
+        print("\t[i] Found user in DB: ", existingUser)
 
-        return cachedUser
+        return existingUser
     }
 
     func getRandomTweetFromUser(username: String, id: String) async -> TweetResponse {
