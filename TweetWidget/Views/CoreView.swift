@@ -36,6 +36,7 @@ struct CoreView: View {
         invalidChars.remove("_")
     }
 
+    // TODO: add instructions on how to add widget.
     var body: some View {
         VStack (alignment: .leading) {
             HStack {

@@ -91,6 +91,8 @@ class CoreViewModel: ObservableObject {
             tweetResp.tweet = Tweet.sampleData
             tweetResp.tweet?.text = "Could not fetch tweet, try again later."
         }
+        
+        print(tweetResp.tweet ?? "")
 
         return tweetResp
     }

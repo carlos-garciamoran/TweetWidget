@@ -38,7 +38,7 @@ struct TweetPreviewProvider: TimelineProvider {
         //       the Twitter users stored locally (as selected by the user in the app).
         let user = User.getUserFromStorage()
         
-        // >>>>>>>>>. TODO: solve bug where sampleData is always returned (12, jack)
+        // >>> TODO: solve bug where sampleData is always returned (12, jack)
 
         print("\t[+] Got user from storage! username=\(user.username!)")
 
@@ -51,6 +51,8 @@ struct TweetPreviewProvider: TimelineProvider {
         Task {
             // NOTE: may want to create error tweet to inform user (through widget).
             let tweet: Tweet = await model.getRandomTweetFromUser(username: user.username!, id: user.id!).tweet ?? Tweet.sampleData
+
+            print("[+] Got tweet", tweet)
 
             let entry = TweetPreviewEntry(date: nextUpdateDate, user: userDetail, tweet: tweet)
 
@@ -92,7 +94,7 @@ struct TweetPreviewWidgetEntryView : View {
             }
             .padding(.top, 10)
             .padding(.bottom, 10)
-            .padding([.leading, .trailing], 20)
+            .padding([.leading, .trailing], 17)
             .widgetURL(URL(string: "tweetwidget://\(entry.tweet.username)/status/\(entry.tweet.id)"))
         )
     }
